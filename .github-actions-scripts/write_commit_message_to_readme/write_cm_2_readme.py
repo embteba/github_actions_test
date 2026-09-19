@@ -4,9 +4,11 @@
 """
 
 import subprocess
+import sys
 import os
 from pathlib import Path
 from datetime import datetime
+
 
 
 def get_latest_commit_message():
