@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-hello-github:
+  commit-write-on-readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
