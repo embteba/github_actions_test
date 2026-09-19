@@ -1,11 +1,14 @@
 name: commit-write-on-readme
 
+# mainブランチへのプッシュ時にトリガーされる
+# また、手動でのワークフロー実行も可能
 on:
   push:
     branches: 
       - main
   workflow_dispatch:
 
+# 書き込み権限を付与
 permissions:
   contents: write
 
@@ -21,7 +24,7 @@ jobs:
           architecture: 'x64'
       - name: Run Python
         working-directory: ./.github-actions-scripts/write_commit_message_to_readme
-        env:
+        env: # 環境変数を設定
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
