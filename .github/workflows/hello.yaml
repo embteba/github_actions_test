@@ -1,0 +1,20 @@
+name: Hello-github-actions
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:
+  call-hello-github:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+          architecture: 'x64'
+      - name: Run Python
+        run: python hello.py
