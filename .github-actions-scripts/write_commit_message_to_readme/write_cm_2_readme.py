@@ -134,6 +134,8 @@ def update_readme_on_github(owner, repo, token, content, message, sha):
             headers=headers,
             method='PUT'
         )
+        
+        print(f"requesting URL: {req}")
         response = urlopen(req)
         result = json.loads(response.read().decode('utf-8'))
         return True
