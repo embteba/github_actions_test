@@ -1,4 +1,4 @@
-name: Hello-github-actions
+name: commit-write-on-readme
 
 on:
   push:

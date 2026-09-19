@@ -21,6 +21,8 @@ def get_latest_commit_message():
             ['git', 'log', '-1', '--pretty=%B'],
             capture_output=True,
             text=True,
+            encoding='utf-8',
+            errors='replace',
             check=True
         )
         return result.stdout.strip()
@@ -43,6 +45,8 @@ def get_readme_path():
             ['git', 'rev-parse', '--show-toplevel'],
             capture_output=True,
             text=True,
+            encoding='utf-8',
+            errors='replace',
             check=True
         )
         repo_root = Path(result.stdout.strip())
