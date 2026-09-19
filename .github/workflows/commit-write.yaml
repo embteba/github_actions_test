@@ -18,4 +18,8 @@ jobs:
           architecture: 'x64'
       - name: Run Python
         working-directory: ./.github-actions-scripts/write_commit_message_to_readme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: python write_cm_2_readme.py
